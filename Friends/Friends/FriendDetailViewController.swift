@@ -9,15 +9,7 @@
 import UIKit
 
 class FriendDetailViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        imageView.image = UIImage(named: "stickFigure")!
-        nameLabel.text = "Steve"
-    }
-
-    
+ 
     // MARK: - Outlets
     
     @IBOutlet weak var imageView: UIImageView!

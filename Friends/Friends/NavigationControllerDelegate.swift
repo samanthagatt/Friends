@@ -23,12 +23,14 @@ class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
         
         guard let toVC = toVC as? FriendDetailViewController else { return nil }
         
+        toVC.loadViewIfNeeded()
+        
 //        imageTransitionAnimator.indexPath = indexPath
         imageTransitionAnimator.fromImageView = sourceCell.imageView
         imageTransitionAnimator.fromNameLabel = sourceCell.textLabel
         imageTransitionAnimator.toImageView = toVC.imageView!
-        imageTransitionAnimator.toNamelabel = toVC.nameLabel
-        imageTransitionAnimator.toDescriptionLabel = toVC.descriptionLabel
+        imageTransitionAnimator.toNamelabel = toVC.nameLabel!
+//        imageTransitionAnimator.toDescriptionLabel = toVC.descriptionLabel
         
         return imageTransitionAnimator
     }

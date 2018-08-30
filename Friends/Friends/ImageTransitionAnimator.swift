@@ -20,13 +20,13 @@ class ImageTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var fromNameLabel: UILabel!
     var toNamelabel: UILabel!
     
-    var toDescriptionLabel: UILabel!
+//    var toDescriptionLabel: UILabel!
     
     
     // MARK: - UIViewControllerAnimatedTransitioning methods
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
+        return 4
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -46,11 +46,10 @@ class ImageTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         toImageView.alpha = 0.0
         toNamelabel.alpha = 0.0
         
-        let startImageViewFrame = fromImageView.bounds
-        let endImageViewFrame = toImageView.bounds
-        
-        let startNameLabelFrame = fromNameLabel.bounds
-        let endNameLabelFrame = toNamelabel.bounds
+        let startImageViewFrame = transitionContext.containerView.convert(fromImageView.bounds, from: fromImageView)
+        let endImageViewFrame = transitionContext.containerView.convert(toImageView.bounds, from: toImageView)
+        let startNameLabelFrame = transitionContext.containerView.convert(fromNameLabel.bounds, from: fromNameLabel)
+        let endNameLabelFrame = transitionContext.containerView.convert(toNamelabel.bounds, from: toNamelabel)
         
         let animatedImageView = UIImageView(frame: startImageViewFrame)
         animatedImageView.image = fromImageView.image
@@ -71,6 +70,8 @@ class ImageTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }) { (success) in
             self.fromImageView.alpha = 1.0
             self.fromNameLabel.alpha = 1.0
+            self.toImageView.alpha = 1.0
+            self.toNamelabel.alpha = 1.0
             animatedImageView.removeFromSuperview()
             animatedNameLabel.removeFromSuperview()
             
