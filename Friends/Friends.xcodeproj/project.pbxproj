@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		D6337EE321386EF800F376B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6337EE221386EF800F376B7 /* AppDelegate.swift */; };
-		D6337EE521386EF800F376B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6337EE421386EF800F376B7 /* ViewController.swift */; };
 		D6337EE821386EF800F376B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6337EE621386EF800F376B7 /* Main.storyboard */; };
 		D6337EEA21386EFB00F376B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6337EE921386EFB00F376B7 /* Assets.xcassets */; };
 		D6337EED21386EFB00F376B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6337EEB21386EFB00F376B7 /* LaunchScreen.storyboard */; };
+		D6EBDE0221386FE100850516 /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EBDE0121386FE100850516 /* NavigationControllerDelegate.swift */; };
+		D6EBDE04213871C100850516 /* ImageTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EBDE03213871C100850516 /* ImageTransitionAnimator.swift */; };
+		D6EBDE062138749600850516 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EBDE052138749600850516 /* FriendsTableViewController.swift */; };
+		D6EBDE08213874A500850516 /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EBDE07213874A500850516 /* FriendDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D6337EDF21386EF800F376B7 /* Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6337EE221386EF800F376B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D6337EE421386EF800F376B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D6337EE721386EF800F376B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6337EE921386EFB00F376B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6337EEC21386EFB00F376B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6337EEE21386EFB00F376B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6EBDE0121386FE100850516 /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		D6EBDE03213871C100850516 /* ImageTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTransitionAnimator.swift; sourceTree = "<group>"; };
+		D6EBDE052138749600850516 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		D6EBDE07213874A500850516 /* FriendDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +60,13 @@
 		D6337EE121386EF800F376B7 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				D6337EE221386EF800F376B7 /* AppDelegate.swift */,
-				D6337EE421386EF800F376B7 /* ViewController.swift */,
+				D6EBDE0121386FE100850516 /* NavigationControllerDelegate.swift */,
+				D6EBDE03213871C100850516 /* ImageTransitionAnimator.swift */,
+				D6EBDE052138749600850516 /* FriendsTableViewController.swift */,
+				D6EBDE07213874A500850516 /* FriendDetailViewController.swift */,
 				D6337EE621386EF800F376B7 /* Main.storyboard */,
 				D6337EE921386EFB00F376B7 /* Assets.xcassets */,
+				D6337EE221386EF800F376B7 /* AppDelegate.swift */,
 				D6337EEB21386EFB00F376B7 /* LaunchScreen.storyboard */,
 				D6337EEE21386EFB00F376B7 /* Info.plist */,
 			);
@@ -135,7 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6337EE521386EF800F376B7 /* ViewController.swift in Sources */,
+				D6EBDE04213871C100850516 /* ImageTransitionAnimator.swift in Sources */,
+				D6EBDE0221386FE100850516 /* NavigationControllerDelegate.swift in Sources */,
+				D6EBDE062138749600850516 /* FriendsTableViewController.swift in Sources */,
+				D6EBDE08213874A500850516 /* FriendDetailViewController.swift in Sources */,
 				D6337EE321386EF800F376B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
