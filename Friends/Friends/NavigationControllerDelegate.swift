@@ -14,6 +14,7 @@ class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
     
     var imageTransitionAnimator = ImageTransitionAnimator()
     var sourceCell: UITableViewCell!
+    var indexPath: IndexPath!
     
     
     // MARK: - UINavigationControllerDelegate method
@@ -22,9 +23,10 @@ class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
         
         guard let toVC = toVC as? FriendDetailViewController else { return nil }
         
-        imageTransitionAnimator.fromImage = sourceCell.imageView?.image
+//        imageTransitionAnimator.indexPath = indexPath
+        imageTransitionAnimator.fromImageView = sourceCell.imageView
         imageTransitionAnimator.fromNameLabel = sourceCell.textLabel
-        imageTransitionAnimator.toImage = toVC.imageView.image
+        imageTransitionAnimator.toImageView = toVC.imageView!
         imageTransitionAnimator.toNamelabel = toVC.nameLabel
         imageTransitionAnimator.toDescriptionLabel = toVC.descriptionLabel
         

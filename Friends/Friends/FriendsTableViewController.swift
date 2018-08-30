@@ -26,11 +26,11 @@ class FriendsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 5
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath)
 
         
         
@@ -43,6 +43,7 @@ class FriendsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowFriendDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
+//            navigationControllerDelegate.indexPath = indexPath
             navigationControllerDelegate.sourceCell = tableView.cellForRow(at: indexPath)
         }
     }

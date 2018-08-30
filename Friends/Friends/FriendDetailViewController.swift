@@ -13,7 +13,8 @@ class FriendDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        imageView.image = UIImage(named: "stickFigure")!
+        nameLabel.text = "Steve"
     }
 
     
@@ -23,12 +24,4 @@ class FriendDetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    
-    
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-
 }
