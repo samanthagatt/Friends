@@ -17,6 +17,14 @@ class FriendDetailViewController: UIViewController {
     }
 
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

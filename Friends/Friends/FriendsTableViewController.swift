@@ -13,22 +13,27 @@ class FriendsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // sets this table view controller's navigation controller's delegate to our custom delegate
+        navigationController?.delegate = navigationControllerDelegate
     }
+    
+    
+    // MARK: - Properties
+    
+    let navigationControllerDelegate = NavigationControllerDelegate()
 
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
-
+        
+        
         return cell
     }
 
@@ -36,7 +41,10 @@ class FriendsTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "ShowFriendDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            navigationControllerDelegate.sourceCell = tableView.cellForRow(at: indexPath)
+        }
     }
 
 }

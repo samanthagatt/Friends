@@ -91,6 +91,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CBE-av-epB"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="CuK-hM-c6X" id="bvB-TC-RPO"/>
+                        <outlet property="imageView" destination="EsD-dA-QyD" id="9GZ-HH-T5e"/>
+                        <outlet property="nameLabel" destination="5IQ-Ja-AoI" id="lJQ-xu-bzj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6t-O2-fob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
