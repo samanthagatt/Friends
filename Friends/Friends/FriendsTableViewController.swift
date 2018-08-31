@@ -43,7 +43,6 @@ class FriendsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowFriendDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-//            navigationControllerDelegate.indexPath = indexPath
             navigationControllerDelegate.sourceCell = tableView.cellForRow(at: indexPath)
         }
     }

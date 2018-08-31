@@ -10,10 +10,15 @@ import UIKit
 
 class FriendDetailViewController: UIViewController {
  
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imageView.contentMode = .scaleAspectFit
+    }
+    
     // MARK: - Outlets
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     
 }

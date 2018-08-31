@@ -25,12 +25,10 @@ class NavigationControllerDelegate: NSObject, UINavigationControllerDelegate {
         
         toVC.loadViewIfNeeded()
         
-//        imageTransitionAnimator.indexPath = indexPath
         imageTransitionAnimator.fromImageView = sourceCell.imageView
         imageTransitionAnimator.fromNameLabel = sourceCell.textLabel
         imageTransitionAnimator.toImageView = toVC.imageView!
         imageTransitionAnimator.toNamelabel = toVC.nameLabel!
-//        imageTransitionAnimator.toDescriptionLabel = toVC.descriptionLabel
         
         return imageTransitionAnimator
     }

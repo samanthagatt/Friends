@@ -11,22 +11,18 @@ import UIKit
 class ImageTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     // MARK: - Properties
-    
-//    var indexPath: IndexPath!
-    
+        
     var fromImageView: UIImageView!
     var toImageView: UIImageView!
     
     var fromNameLabel: UILabel!
     var toNamelabel: UILabel!
     
-//    var toDescriptionLabel: UILabel!
-    
     
     // MARK: - UIViewControllerAnimatedTransitioning methods
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 4
+        return 5
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -36,15 +32,10 @@ class ImageTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             let toView = transitionContext.view(forKey: .to) else { return }
         
         let toViewEndFrame = transitionContext.finalFrame(for: toVC)
-        transitionContext.containerView.addSubview(toView)
         toView.frame = toViewEndFrame
         toView.alpha = 0.0
+        transitionContext.containerView.addSubview(toView)
         
-//        fromVC.tableView.cellForRow(at: indexPath)?.alpha = 0.0
-        fromImageView.alpha = 0.0
-        fromNameLabel.alpha = 0.0
-        toImageView.alpha = 0.0
-        toNamelabel.alpha = 0.0
         
         let startImageViewFrame = transitionContext.containerView.convert(fromImageView.bounds, from: fromImageView)
         let endImageViewFrame = transitionContext.containerView.convert(toImageView.bounds, from: toImageView)
@@ -53,18 +44,26 @@ class ImageTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         let animatedImageView = UIImageView(frame: startImageViewFrame)
         animatedImageView.image = fromImageView.image
+        animatedImageView.contentMode = fromImageView.contentMode
         
         let animatedNameLabel = UILabel(frame: startNameLabelFrame)
         animatedNameLabel.text = fromNameLabel.text
+        animatedNameLabel.font = fromNameLabel.font
+        
+        
+        fromImageView.alpha = 0.0
+        fromNameLabel.alpha = 0.0
+        toImageView.alpha = 0.0
+        toNamelabel.alpha = 0.0
         
         transitionContext.containerView.addSubview(animatedImageView)
         transitionContext.containerView.addSubview(animatedNameLabel)
         
-        toView.layoutIfNeeded()
         let duration = transitionDuration(using: transitionContext)
+        toView.layoutIfNeeded()
         UIView.animate(withDuration: duration, animations: {
-            animatedImageView.bounds = endImageViewFrame
-            animatedNameLabel.bounds = endNameLabelFrame
+            animatedImageView.frame = endImageViewFrame
+            animatedNameLabel.frame = endNameLabelFrame
             // going to make the description label fade in
             toView.alpha = 1.0
         }) { (success) in
